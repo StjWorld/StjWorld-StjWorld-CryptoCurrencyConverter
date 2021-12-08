@@ -1,0 +1,71 @@
+    <body class = "bg-info">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-6 mx-auto">
+
+                        <div class="card card-body text-center mt-5">
+
+                            <h1 class="heading display-5 pb-3">Currency Converter</h1>
+
+                        <form id="currency-form" method="post">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-text">First Currency</span>
+                                    <select class="selectpicker" name = "firstCurrency">
+                                     <option>BTC</option>
+                                     <option>USD</option>
+                                     <option>ETH</option>
+                                     <option>EUR</option>
+
+
+                                    </select>
+
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-text">Second Currency</span>
+                                    <select class="selectpicker" name = "secondCurrency">
+                                            <option>BTC</option>
+                                            <option>USD</option>
+                                            <option>ETH</option>
+                                            <option>EUR</option>
+
+                                           </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" step="0.01" name = "amount" placeholder="Amount" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <input id ="submitbtn" type="submit" value = "Calculate" class = "btn btn-info">
+                            </div>
+                        </form>
+
+                        {% if info %}
+                                                    <div id="results" class = "pt-4">
+                            <h5>Results</h5>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-text">{{info.amount}} {{info.firstCurrency}}</span>
+                                    <div class="form-control" id="total">
+                                      {{info.result}} {{info.secondCurrency}}
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+
+
+                        {% endif %}
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
